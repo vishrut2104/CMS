@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table class="table table-striped" style="width:100%" border:>
+    <caption>Screening Details</caption>
+    <tr>
+        <th>Start Date&Time</th>
+        <th>Film Name</th>
+        <th>Duration</th>
+        <th>Room name</th>
+    </tr>
+    {% for item in details %}
+    <div>
+        <tr>
+            <td>{{ item.start_time }}</td>
+            <td>{{ item.film.name }}</td>
+            <td>{{ item.film.length_min }}</td>
+            <td>{{ item.room.name }}</td>
+        </tr>
+    </div>
+    {% endfor %}
+</table>
+
+{% endblock %}

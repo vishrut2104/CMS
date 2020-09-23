@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <table class="table table-striped" style="width:100%">
+            <caption>Booking Details</caption>
+            <tr>
+              <th>Lastname</th>
+              <th>Start Time</th>
+              <th>Film</th>
+              <th>Run time</th>
+              <th>Room Name</th>
+              <th>Row ID</th>
+              <th>Reserved seats</th>
+            </tr>
+        {% for person in details %}
+        <div>
+            <tr>
+                <td>{{ person.booking.customers.last_name }}</td>
+                <td>{{ person.booking.screening.start_time }}</td>
+                <td>{{ person.booking.screening.film.name }}</td>
+                <td>{{ person.booking.screening.film.length_min }}</td>
+                <td>{{ person.seat.room.name }}</td>
+                <td>{{ person.seat.row_id }}</td>
+                <td>{{ person.seat.seat_number }}</td>
+            </tr>
+        </div>
+        {% endfor %}
+        </table>
+{% endblock %}

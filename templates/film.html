@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped" style="width:100%" border:>
+    <caption>Film Details</caption>
+    <tr>
+        <th>ID</th>
+        <th>Film Name</th>
+        <th>Duration</th>
+        <!-- <th>Room name</th> -->
+    </tr>
+    {% for item in details %}
+    <div>
+        <tr>
+            <td>{{ item.id }}</td>
+            <td><a href="{% url 'film_detail' pk=item.pk %}">{{ item.name }}</a></td>
+            <td>{{ item.length_min }}</td>
+            <!-- <td>{{ item.room.name }}</td> -->
+        </tr>
+    </div>
+    {% endfor %}
+</table>
+
+{% endblock %}

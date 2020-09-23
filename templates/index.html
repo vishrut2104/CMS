@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <div class="search">
+        <form class="form-inline" method="POST" action="/booking">
+            {% csrf_token %}
+            <h2 for="booking">booking search</h2>
+            <input type="text" class="form-control" id="booking" placeholder="Booking ID" name="textfield">
+            <button class="btn btn-default" type="submit">Search Booking</button>
+        </form>
+    </div>
+
+
+    <div class="search">
+        <form class="form-inline" method="POST" action="/customer">
+            {% csrf_token %}
+            <h2>customer search</h2>
+            <input type="text" class="form-control" placeholder="Customer ID" name="textfield">
+            <button class="btn btn-default" type="submit">Search Customer</button>
+        </form>
+    </div>
+    
+    <h2>display screenings</h2>
+    <div class="search">
+        <form method="POST" action="/screening">
+            {% csrf_token %}
+            <!-- <input type="text" name="textfield"> -->
+            <button class="btn btn-default" type="submit">Search Screening</button>
+        </form>
+    </div>
+    
+    <h2>display films</h2>
+    <div class="search">
+        <form method="POST" action="/film">
+            {% csrf_token %}
+            <!-- <input type="text" name="textfield"> -->
+            <button class="btn btn-default" type="submit">Search Films</button>
+        </form>
+    </div>
+    
+{% endblock %}
